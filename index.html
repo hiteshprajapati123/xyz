@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
 </head>
 <body>
@@ -33,7 +34,6 @@
             <div class="nav-links">
                 <a href="#hero">Proposal</a>
                 <a href="#how-we-met">Our Story</a>
-                <a href="#why-i-love-you">Reasons</a>
                 <a href="#memories">Memories</a>
                 <a href="#reply">Reply</a>
             </div>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <p class="hero-subtitle">The moment I've been dreaming of...</p>
-            <button class="scroll-down" onclick="scrollToSection('how-we-met')">
+            <button class="scroll-down" id="journeyButton">
                 <span>Our Journey</span>
                 <div class="arrow-down">↓</div>
             </button>
@@ -150,17 +150,45 @@
                 <h2 class="proposal-question">Will You Be Mine Forever?</h2>
                 <p class="proposal-text">Janvi, you are my everything. Will you marry me and make me the happiest person alive?</p>
                 
-                <div class="proposal-buttons">
-                    <button class="btn btn-yes" id="yesBtn">
-                        <span class="btn-text">💗 YES!</span>
-                        <div class="btn-sparkle"></div>
-                    </button>
-                    <button class="btn btn-no" id="noBtn">
-                        <span class="btn-text">🙈 No</span>
-                    </button>
-                </div>
+                <div class="response-toggle">
+                    <input type="radio" id="yes-radio" name="response" class="response-radio">
+                    <input type="radio" id="no-radio" name="response" class="response-radio">
+                    
+                    <div class="proposal-buttons">
+                        <label class="btn btn-yes" for="yes-radio">
+                            <span class="btn-text">💗 YES!</span>
+                            <div class="btn-sparkle"></div>
+                        </label>
+                        <label class="btn btn-no" for="no-radio">
+                            <span class="btn-text">🙈 No</span>
+                        </label>
+                    </div>
 
-                <div class="response-container" id="responseContainer"></div>
+                    <!-- Yes Response -->
+                    <div class="response-container" id="yes-response">
+                        <div class="response-yes">
+                            <h3>💕 You said YES! 💕</h3>
+                            <p>I'm the luckiest person in the world! 🌟</p>
+                            <div class="celebration-gif">
+                                🎉 💖 🎊 💍 ✨
+                            </div>
+                            <p class="italic">"Every love story is beautiful, but ours is my favorite." 💕</p>
+                        </div>
+                    </div>
+
+                    <!-- No Response -->
+                    <div class="response-container" id="no-response">
+                        <div class="response-no">
+                            <h3>😢 Are you sure?</h3>
+                            <p>Please give it another thought...</p>
+                            <div class="sad-emoji">💔</div>
+                            <p class="italic">"The heart wants what it wants..."</p>
+                            <label class="btn btn-yes" for="yes-radio">
+                                <span class="btn-text">I changed my mind! 💖</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="proposal-hearts"></div>
@@ -174,7 +202,7 @@
                 <form class="reply-form" id="replyForm" action="https://formspree.io/f/mqalpezj" method="POST">
                     <div class="form-group">
                         <label for="name">From:</label>
-                        <input type="text" id="name" name="name" value="Your Janvi" readonly class="form-input">
+                        <input type="text" id="name" name="name" value="Your Janvi" class="form-input">
                     </div>
                     <div class="form-group">
                         <label for="message">Your Message:</label>
@@ -202,6 +230,15 @@
     <div class="confetti" id="confetti"></div>
     <canvas id="heartsCanvas"></canvas>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

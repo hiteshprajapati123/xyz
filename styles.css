@@ -725,11 +725,240 @@ html {
     left: 100%;
 }
 
-.response-container {
-    min-height: 100px;
+/* Ensure buttons are clickable and have proper cursor */
+.btn {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Make sure buttons are above other elements */
+.proposal-buttons {
+    position: relative;
+    z-index: 10;
     display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Hide radio inputs */
+.response-radio {
+    display: none;
+}
+
+/* Response Toggle Container */
+.response-toggle {
+    position: relative;
+}
+
+/* Hide radio inputs but keep them in the document flow */
+.response-radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Response Container Styles */
+.response-container {
+    min-height: 200px;
+    display: none; /* Hidden by default */
     align-items: center;
     justify-content: center;
+    padding: 30px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+/* Show response when radio is checked */
+#yes-radio:checked ~ #yes-response,
+#no-radio:checked ~ #no-response {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hide other response when one is shown */
+#yes-radio:checked ~ #no-response,
+#no-radio:checked ~ #yes-response {
+    display: none;
+}
+
+/* Hide buttons when a response is shown */
+#yes-radio:checked ~ .proposal-buttons,
+#no-radio:checked ~ .proposal-buttons {
+    display: none;
+}
+
+/* Show buttons when no response is selected */
+#yes-radio:not(:checked):not(:checked) ~ .proposal-buttons,
+#no-radio:not(:checked):not(:checked) ~ .proposal-buttons {
+    display: flex;
+}
+
+/* Style the response content */
+.response-yes h3,
+.response-no h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+}
+
+.response-no h3 {
+    color: #666;
+}
+
+.celebration-gif {
+    font-size: 3rem;
+    margin: 20px 0;
+    animation: heartBeat 1s ease-in-out infinite;
+}
+
+.sad-emoji {
+    font-size: 3rem;
+    margin: 20px 0;
+    animation: pulse 2s infinite;
+}
+
+.italic {
+    font-style: italic;
+    color: #666;
+    margin: 20px 0 0;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Make sure the proposal section has proper positioning */
+.proposal-section {
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+}
+
+/* Ensure the response container is properly positioned */
+.proposal-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animations */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1.05) translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.2); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.2); }
+    70% { transform: scale(1); }
+}
+
+/* Button hover effects */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Removed duplicate .proposal-buttons class */
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-yes {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    color: white;
+}
+
+.btn-no {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-sparkle {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn:hover .btn-sparkle {
+    opacity: 1;
 }
 
 /* Reply Form */
