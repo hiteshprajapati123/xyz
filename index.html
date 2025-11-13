@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me, Janvi? 💍</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="stars"></div>
+    <div class="hearts-bg"></div>
+    
+    <!-- Music Toggle -->
+    <div class="music-toggle" id="musicToggle">
+        <span class="music-icon">🎵</span>
+        <span class="music-text">Music</span>
+    </div>
+    
+    <audio id="backgroundMusic" loop preload="metadata">
+        <!-- WhatsApp audio file -->
+        <source src="WhatsApp Audio 2025-11-13 at 12.11.07 PM.mpeg" type="audio/mpeg">
+    </audio>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand">💕 Our Love Story</a>
+            <div class="nav-links">
+                <a href="#hero">Proposal</a>
+                <a href="#how-we-met">Our Story</a>
+                <a href="#why-i-love-you">Reasons</a>
+                <a href="#memories">Memories</a>
+                <a href="#reply">Reply</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="proposal-title">
+                <span class="line-1">Will You</span>
+                <span class="line-2">Marry Me,</span>
+                <span class="line-3 highlight">Janvi?</span>
+                <div class="heart-glow">💍</div>
+            </h1>
+            <div class="couple-illustration">
+                <div class="heart-frame">
+                    <img src="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Our Love" class="couple-photo">
+                </div>
+            </div>
+            <p class="hero-subtitle">The moment I've been dreaming of...</p>
+            <button class="scroll-down" onclick="scrollToSection('how-we-met')">
+                <span>Our Journey</span>
+                <div class="arrow-down">↓</div>
+            </button>
+        </div>
+        <div class="floating-hearts"></div>
+    </section>
+
+    <!-- How We Met Section -->
+    <section id="how-we-met" class="section">
+        <div class="container">
+            <h2 class="section-title">How We Met 💫</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">💕</div>
+                    <div class="timeline-content">
+                        <h3>First Meeting</h3>
+                        <p class="timeline-date">The Beginning</p>
+                        <p>That magical day when our eyes first met and I knew something special was about to begin. Your smile lit up my entire world.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-marker">☕</div>
+                    <div class="timeline-content">
+                        <h3>First Coffee Date</h3>
+                        <p class="timeline-date">Our First Adventure</p>
+                        <p>We talked for hours and it felt like minutes. I knew I wanted to spend every day learning more about your beautiful soul.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-marker">🌹</div>
+                    <div class="timeline-content">
+                        <h3>Falling in Love</h3>
+                        <p class="timeline-date">Heart & Soul</p>
+                        <p>Every moment with you made me fall deeper. Your laugh became my favorite sound, your happiness my greatest joy.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-marker">💍</div>
+                    <div class="timeline-content">
+                        <h3>Forever Starts Now</h3>
+                        <p class="timeline-date">Today</p>
+                        <p>And now, I want to spend forever making you smile, supporting your dreams, and loving you with all my heart.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why I Love You Section -->
+    <section id="why-i-love-you" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Why I Love You ❤️</h2>
+            <div class="love-reasons">
+                <div class="reason-card" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="reason-icon">😊</div>
+                    <h3>Your Beautiful Smile</h3>
+                    <p>It lights up my world and makes everything better</p>
+                </div>
+                <div class="reason-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="reason-icon">💝</div>
+                    <h3>Your Kind Heart</h3>
+                    <p>The way you care for everyone around you amazes me</p>
+                </div>
+                <div class="reason-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="reason-icon">🌟</div>
+                    <h3>Your Dreams</h3>
+                    <p>Your passion and ambition inspire me every day</p>
+                </div>
+                <div class="reason-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="reason-icon">💫</div>
+                    <h3>Your Uniqueness</h3>
+                    <p>Everything about you is perfectly, beautifully you</p>
+                </div>
+                <div class="reason-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="reason-icon">🎵</div>
+                    <h3>Your Laugh</h3>
+                    <p>It's the most beautiful melody I've ever heard</p>
+                </div>
+                <div class="reason-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="reason-icon">🌈</div>
+                    <h3>Our Chemistry</h3>
+                    <p>We just fit together like puzzle pieces</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposal Section -->
+    <section id="proposal" class="section proposal-section">
+        <div class="container">
+            <div class="proposal-content">
+                <h2 class="proposal-question">Will You Be Mine Forever?</h2>
+                <p class="proposal-text">Janvi, you are my everything. Will you marry me and make me the happiest person alive?</p>
+                
+                <div class="proposal-buttons">
+                    <button class="btn btn-yes" id="yesBtn">
+                        <span class="btn-text">💗 YES!</span>
+                        <div class="btn-sparkle"></div>
+                    </button>
+                    <button class="btn btn-no" id="noBtn">
+                        <span class="btn-text">🙈 No</span>
+                    </button>
+                </div>
+
+                <div class="response-container" id="responseContainer"></div>
+            </div>
+        </div>
+        <div class="proposal-hearts"></div>
+    </section>
+
+    <!-- Reply Form Section -->
+    <section id="reply" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Your Response 💌</h2>
+            <div class="reply-form-container">
+                <form class="reply-form" id="replyForm" action="https://formspree.io/f/mqalpezj" method="POST">
+                    <div class="form-group">
+                        <label for="name">From:</label>
+                        <input type="text" id="name" name="name" value="Your Janvi" readonly class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" placeholder="Write your heart out..." class="form-textarea" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">
+                        Send with Love 💌
+                    </button>
+                </form>
+                <div class="form-response" id="formResponse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">No matter what you say... You'll always be the one I choose. ❤️</p>
+            <div class="footer-hearts">💕 💖 💕</div>
+        </div>
+    </footer>
+
+    <!-- Celebration Elements -->
+    <div class="fireworks" id="fireworks"></div>
+    <div class="confetti" id="confetti"></div>
+    <canvas id="heartsCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
